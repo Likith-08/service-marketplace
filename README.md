@@ -231,7 +231,9 @@ cd servicehub-app npm install npm start
 
 🌐 Running the Application
 
-ServiceURLFrontendhttp://localhost:3000Backendhttp://localhost:5000 
+ServiceURL  
+Frontend : http://localhost:3000 
+Backend  :  http://localhost:5000 
 
 ⚠️ Important Notes
 
