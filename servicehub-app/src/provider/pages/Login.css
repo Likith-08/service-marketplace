@@ -1,0 +1,94 @@
+/* 🌈 BACKGROUND */
+.login-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(-45deg, #1677ff, #69c0ff, #36cfc9, #4096ff);
+  background-size: 400% 400%;
+  animation: gradientBG 10s ease infinite;
+}
+
+/* 🌊 ANIMATION */
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* 🧊 GLASS CARD */
+.login-card {
+  backdrop-filter: blur(15px);
+  background: rgba(255, 255, 255, 0.15);
+  padding: 35px;
+  border-radius: 16px;
+  width: 320px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+  text-align: center;
+  color: white;
+}
+
+/* TITLE */
+.login-card h2 {
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+/* INPUT */
+.login-card input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  background: rgba(255,255,255,0.2);
+  color: white;
+  font-size: 14px;
+}
+
+.login-card input::placeholder {
+  color: #eee;
+}
+
+/* FOCUS EFFECT */
+.login-card input:focus {
+  background: rgba(255,255,255,0.3);
+}
+
+/* BUTTON */
+.login-btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #ffffff, #dbeafe);
+  color: #1677ff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.login-btn:hover {
+  transform: scale(1.05);
+}
+
+/* LINK TEXT */
+.login-card p {
+  margin-top: 12px;
+  font-size: 14px;
+  cursor: pointer;
+  color: #fff;
+}
+
+.login-card p:hover {
+  text-decoration: underline;
+}
+
+/* 📱 MOBILE */
+@media (max-width: 400px) {
+  .login-card {
+    width: 90%;
+    padding: 25px;
+  }
+}

@@ -1,0 +1,310 @@
+/* ===================== PAGE BASE ===================== */
+.payment-page {
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  padding: 80px 34px 90px;
+  color: #fff;
+
+  background:
+    radial-gradient(circle at 10% 10%, rgba(59,130,246,0.25), transparent 40%),
+    radial-gradient(circle at 90% 0%, rgba(6,182,212,0.18), transparent 40%),
+    radial-gradient(circle at 50% 100%, rgba(168,85,247,0.15), transparent 45%),
+    linear-gradient(135deg, #020617 0%, #020617 50%, #030712 100%);
+}
+
+/* grid overlay */
+.payment-page::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+}
+
+/* 🔥 floating glow */
+.payment-page::after {
+  content: "";
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  top: -150px;
+  right: -150px;
+  background: radial-gradient(circle, rgba(59,130,246,0.25), transparent 70%);
+  filter: blur(40px);
+  animation: floatGlow 8s ease-in-out infinite alternate;
+}
+
+@keyframes floatGlow {
+  from { transform: translateY(0px) scale(1); }
+  to { transform: translateY(40px) scale(1.1); }
+}
+
+/* ===================== BACK BUTTON ===================== */
+.back-to-services-btn {
+  position: fixed !important;
+  top: 22px;
+  left: 22px;
+  z-index: 99999;
+  padding: 12px 20px;
+  border-radius: 16px;
+  background: rgba(10,15,30,0.7);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.1);
+  font-size: 13px;
+  font-weight: 800;
+  transition: all 0.3s ease;
+}
+
+.back-to-services-btn:hover {
+  transform: translateY(-3px) scale(1.02);
+  background: linear-gradient(135deg, #2563eb, #06b6d4);
+  box-shadow: 0 10px 40px rgba(37,99,235,0.5);
+}
+
+/* ===================== LAYOUT ===================== */
+.payment-wrapper {
+  max-width: 1650px;
+  margin: 60px auto 0;
+  display: grid;
+  grid-template-columns: 1.65fr 1.15fr;
+  gap: 40px;
+}
+
+/* ===================== HEADER ===================== */
+.payment-header {
+  margin: 0 auto 30px;   /* center horizontally */
+  max-width: 700px;
+  text-align: center;    /* center text */
+}
+.payment-header h1 {
+  font-size: 2.8rem;
+  font-weight: 900;
+  line-height: 1.2;
+  padding-top: 5px;
+  background: linear-gradient(to right, #ffffff, #67e8f9);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 10px 30px rgba(59,130,246,0.3);
+
+  position: relative;
+  overflow: hidden;
+}
+
+/* shine effect */
+.payment-header h1::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.25),
+    transparent
+  );
+  animation: textShine 5s infinite;
+}
+
+@keyframes textShine {
+  0% { left: -120%; }
+  100% { left: 120%; }
+}
+
+.payment-header p {
+  color: #94a3b8;
+  text-align: center;
+}
+/* ===================== PAYMENT METHODS ===================== */
+.payment-methods {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 10px;
+}
+
+/* cards */
+.payment-card {
+  position: relative;
+  padding: 22px 26px;
+  border-radius: 22px;
+  background: rgba(15,23,42,0.6);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(255,255,255,0.08);
+  cursor: pointer;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+
+  transform-style: preserve-3d;
+  transition: all 0.35s ease;
+
+  animation: fadeUp 0.6s ease both;
+}
+
+/* stagger */
+.payment-card:nth-child(1){animation-delay:0.05s;}
+.payment-card:nth-child(2){animation-delay:0.1s;}
+.payment-card:nth-child(3){animation-delay:0.15s;}
+.payment-card:nth-child(4){animation-delay:0.2s;}
+.payment-card:nth-child(5){animation-delay:0.25s;}
+
+@keyframes fadeUp {
+  from { opacity:0; transform:translateY(30px); }
+  to { opacity:1; transform:translateY(0); }
+}
+
+/* glow border */
+.payment-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 22px;
+  border: 1px solid transparent;
+  background:
+    linear-gradient(#020617,) padding-box,
+    linear-gradient(120deg, transparent, rgba(59,130,246,0.6), transparent) border-box;
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.payment-card:hover::after {
+  opacity: 1;
+}
+
+.payment-card:hover {
+  transform: translateY(-8px) scale(1.02) rotateX(2deg);
+  background: rgba(20,30,60,0.85);
+  box-shadow:
+    0 25px 70px rgba(37,99,235,0.35),
+    0 10px 30px rgba(0,0,0,0.5);
+}
+
+.payment-card:active {
+  transform: scale(0.97);
+}
+
+.payment-card h3 {
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+
+.payment-card p {
+  font-size: 0.9rem;
+  color: #9ca3af;
+}
+
+/* ===================== SUMMARY ===================== */
+.summary-box {
+  position: sticky;
+  top: 30px;
+  padding: 38px;
+  border-radius: 30px;
+  background: rgba(10,15,30,0.7);
+  backdrop-filter: blur(22px);
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.45);
+  transition: 0.3s;
+}
+
+.summary-box:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 30px 80px rgba(37,99,235,0.35),
+    0 15px 40px rgba(0,0,0,0.6);
+    
+}
+
+.summary-service-preview img {
+  transition: 0.4s;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+.summary-service-preview img:hover {
+  transform: scale(1.05);
+}
+
+.summary-service-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;              /* 🔥 controls spacing between text */
+  
+  padding: 12px 14px;    /* balanced inner spacing */
+  margin: 6px 0;         /* cleaner outer spacing */
+
+  line-height: 1.4;      /* improves readability */
+}
+
+
+.summary-item {
+  transition: 0.2s;
+  padding:10px;
+}
+
+.summary-item:hover {
+  transform: translateX(4px);
+}
+
+/* ===================== TOTAL ===================== */
+.summary-total {
+  padding: 22px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #2563eb, #06b6d4);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 15px 50px rgba(37,99,235,0.5);
+}
+
+.summary-total::before {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 300%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.25),
+    transparent
+  );
+  animation: shine 5s infinite;
+}
+
+@keyframes shine {
+  0% { transform: translateX(-100%) rotate(25deg); }
+  100% { transform: translateX(100%) rotate(25deg); }
+}
+
+.summary-total h3 {
+  font-size: 2.6rem;
+}
+
+/* ===================== RESPONSIVE ===================== */
+@media (max-width: 900px) {
+  .payment-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .payment-header h1 {
+    text-align: center;
+    font-size: 2.3rem;
+  }
+
+  .payment-header p {
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .payment-header h1 {
+    font-size: 2rem;
+  }
+
+  .summary-total h3 {
+    font-size: 2.2rem;
+  }
+}
