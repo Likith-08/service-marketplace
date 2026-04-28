@@ -1,24 +1,59 @@
-🚀 Service Marketplace (ServiceHub)
+🚀 ServiceHub – Full Stack Service Marketplace Platform
 
-A full-stack service marketplace platform where customers can browse and book services, and providers can manage their services and bookings in real-time.
+📌 Introduction
 
-📌 Project Overview
+ServiceHub is a full-stack service marketplace web application designed to connect customers with service providers in a seamless and efficient way.
+It allows users to:
 
-ServiceHub is a two-sided platform:
+Discover professional services
 
-👤 Customers → Browse services, view details, and book
+Book services easily
 
-🧑‍🔧 Providers → Create services, manage bookings, respond in real-time
+Manage bookings in real-time
 
-🏗️ Tech Stack
+Enable providers to handle service requests dynamically
+
+This project demonstrates real-world scalable architecture, including REST APIs, real-time communication, and modular design.
+
+🎯 Objective
+
+The main goal of this project is to:
+
+Build a production-like full-stack application
+
+Implement role-based functionality (Customer & Provider)
+
+Integrate real-time updates using Socket.IO
+
+Follow clean architecture (MVC pattern)
+
+Prepare a portfolio-ready project for interviews
+
+🏗️ Architecture Overview
+
+This application follows a client-server architecture:
+
+Frontend (React) → Handles UI/UX
+
+Backend (Node.js + Express) → Handles API & logic
+
+Database (MongoDB) → Stores data
+
+Socket.IO → Handles real-time communication
+
+Client (React) → Express API → MongoDB ↘ Socket.IO (Real-time updates) 
+
+🧰 Tech Stack
 
 Frontend
 
 React.js
 
-CSS (Custom Styling)
+CSS3 (Custom Responsive Design)
 
-Axios
+Axios (API calls)
+
+React Router DOM
 
 Socket.IO Client
 
@@ -28,57 +63,165 @@ Node.js
 
 Express.js
 
-MongoDB (Mongoose)
+MongoDB
+
+Mongoose
 
 Socket.IO
 
-📂 Project Structure
+Tools & Environment
 
-service-marketplace/ │ ├── backend/ │ ├── config/ │ ├── controllers/ │ ├── middleware/ │ ├── models/ │ ├── routes/ │ ├── server.js │ └── package.json │ ├── servicehub-app/ │ ├── public/ │ ├── src/ │ │ ├── customer/ │ │ ├── provider/ │ │ ├── assets/ │ │ └── pages/ │ └── package.json │ └── .gitignore 
+VS Code
 
-✨ Features
+Git & GitHub
 
-👤 Customer Features
+Postman (API testing)
 
-Browse professional services
+📁 Project Structure
 
-Search functionality
+service-marketplace/ │ ├── backend/ │ ├── config/ # Database configuration │ ├── controllers/ # Business logic │ ├── middleware/ # Authentication middleware │ ├── models/ # Mongoose schemas │ ├── routes/ # API routes │ ├── server.js # Entry point │ └── package.json │ ├── servicehub-app/ │ ├── public/ │ ├── src/ │ │ ├── customer/ # Customer features │ │ ├── provider/ # Provider features │ │ ├── assets/ │ │ └── pages/ │ └── package.json │ └── .gitignore 
 
-View service details
+🔥 Core Features
 
-Booking system
+👤 Customer Module
 
-Responsive UI
+View all available services
 
-🧑‍🔧 Provider Features
+Search services
 
-Add/Edit/Delete services
+View detailed service info
 
-Manage bookings
+Book services
 
-Accept/Reject requests
+Responsive UI for mobile
 
-Mark service as completed
+🧑‍🔧 Provider Module
 
-⚡ Real-Time Features
+Register/Login
+
+Create new services
+
+Edit/Delete services
+
+View incoming bookings
+
+Accept/Reject bookings
+
+Mark bookings as completed
+
+⚡ Real-Time System
 
 Socket.IO integration
 
-Instant booking updates
+Instant updates when: 
 
-Live notifications
+Booking is created
 
-⚙️ Installation & Setup
+Booking status changes
 
-1️⃣ Clone the repository
+No need for page refresh
+
+🔄 Application Flow
+
+Customer Flow
+
+User visits platform
+
+Browses services
+
+Views service details
+
+Books a service
+
+Booking stored in database
+
+Provider gets real-time notification
+
+Provider Flow
+
+Provider logs in
+
+Views bookings
+
+Accepts or rejects request
+
+Status updated in real-time
+
+Customer sees updated status instantly
+
+🗄️ Database Design (MongoDB)
+
+User Model
+
+name
+
+email
+
+password
+
+role (customer/provider)
+
+Service Model
+
+title
+
+description
+
+price
+
+category
+
+providerId
+
+Booking Model
+
+serviceId
+
+customerId
+
+providerId
+
+status (pending/accepted/rejected/completed)
+
+date
+
+🔌 API Design
+
+Auth Routes
+
+POST /api/auth/register
+
+POST /api/auth/login
+
+Service Routes
+
+GET /api/services
+
+POST /api/services
+
+PUT /api/services/:id
+
+DELETE /api/services/:id
+
+Booking Routes
+
+POST /api/bookings
+
+GET /api/bookings
+
+PUT /api/bookings/:id
+
+⚙️ Installation Guide
+
+1️⃣ Clone Repository
 
 git clone https://github.com/your-username/service-marketplace.git cd service-marketplace 
 
 2️⃣ Backend Setup
 
 cd backend npm install 
-Create a .env file:
-PORT=5000 MONGO_URI=your_mongodb_connection 
+Create .env file:
+PORT=5000 MONGO_URI=your_mongodb_connection JWT_SECRET=your_secret_key 
 Run backend:
 node server.js 
 
@@ -86,52 +229,54 @@ node server.js
 
 cd servicehub-app npm install npm start 
 
-🌐 Running the Project
+🌐 Running the Application
 
-Frontend → http://localhost:3000
+ServiceURLFrontendhttp://localhost:3000Backendhttp://localhost:5000 
 
-Backend → http://localhost:5000
+⚠️ Important Notes
 
-🔌 API Endpoints (Sample)
+node_modules is ignored using .gitignore
 
-Auth
+Environment variables are not pushed to GitHub
 
-POST /api/auth/register
+Backend and frontend run independently
 
-POST /api/auth/login
+🧪 Testing
 
-Services
+API tested using Postman
 
-GET /api/services
+Manual UI testing for frontend
 
-POST /api/services
+Real-time events tested using multiple tabs
 
-Bookings
+💡 Key Learnings
 
-POST /api/bookings
+Full-stack architecture design
 
-GET /api/bookings
+REST API development
 
-📸 Screens (Optional)
+Real-time communication (Socket.IO)
 
-(Add screenshots later for better presentation)
+MongoDB schema design
 
-🚀 Future Enhancements
+State management in React
 
-💳 Razorpay Payment Integration
-
-🔔 Notification system
-
-📱 Mobile optimization
-
-🌍 Deployment (Render / Vercel)
-
-⭐ Ratings & Reviews
+Git & GitHub workflow
 
 👨‍💻 Author
 
 Likith Machireddy
 
-📄 License
+📌 Conclusion
 
-This project is open-source and available under the MIT License.
+ServiceHub is a scalable, real-world inspired project that demonstrates strong understanding of:
+
+Full-stack development
+
+Real-time systems
+
+Clean architecture
+
+Industry-level coding practices
+
+⭐ If you like this project, give it a star on GitHub!
