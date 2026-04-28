@@ -79,7 +79,26 @@ Postman (API testing)
 
 📁 Project Structure
 
-service-marketplace/ │ ├── backend/ │ ├── config/ # Database configuration │ ├── controllers/ # Business logic │ ├── middleware/ # Authentication middleware │ ├── models/ # Mongoose schemas │ ├── routes/ # API routes │ ├── server.js # Entry point │ └── package.json │ ├── servicehub-app/ │ ├── public/ │ ├── src/ │ │ ├── customer/ # Customer features │ │ ├── provider/ # Provider features │ │ ├── assets/ │ │ └── pages/ │ └── package.json │ └── .gitignore 
+service-marketplace/
+│ ├── backend/ 
+    ├── config/ # Database configuration │ 
+    ├── controllers/ # Business logic │ 
+    ├── middleware/ # Authentication middleware │ 
+    ├── models/ # Mongoose schemas │ 
+    ├── routes/ # API routes │
+    ├── server.js # Entry point │
+    └── package.json │ 
+    
+├── servicehub-app/ │ 
+    ├── public/ │ 
+    ├── src/ │ │ 
+       ├── customer/ # Customer features │ 
+       ├── provider/ # Provider features │
+       ├── assets/ │
+       └── pages/ │ 
+    └── package.json │ 
+    
+ |── .gitignore 
 
 🔥 Core Features
 
