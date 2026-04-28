@@ -80,6 +80,7 @@ Postman (API testing)
 📁 Project Structure
 
 service-marketplace/
+
 │ ├── backend/ 
     ├── config/ # Database configuration │ 
     ├── controllers/ # Business logic │ 
