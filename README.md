@@ -231,9 +231,7 @@ cd servicehub-app npm install npm start
 
 🌐 Running the Application
 
-ServiceURL  
-Frontend : http://localhost:3000 
-Backend  :  http://localhost:5000 
+ServiceURLFrontendhttp://localhost:3000Backendhttp://localhost:5000 
 
 ⚠️ Important Notes
 
@@ -242,6 +240,20 @@ node_modules is ignored using .gitignore
 Environment variables are not pushed to GitHub
 
 Backend and frontend run independently
+
+🚀 Future Improvements
+
+💳 Razorpay Payment Integration
+
+🔔 Notification system
+
+📊 Admin dashboard
+
+⭐ Ratings & Reviews
+
+🌍 Deployment (Render + Vercel)
+
+🔐 JWT Authentication Enhancement
 
 🧪 Testing
 
