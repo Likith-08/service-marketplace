@@ -49,8 +49,7 @@ export default function ServicesPage() {
     };
   const navigate = useNavigate();
   console.log("Selected:", selectedService);
-
-
+  
  useEffect(() => {
   fetch(`${BASE_URL}/api/services/public`)
     .then((res) => res.json())

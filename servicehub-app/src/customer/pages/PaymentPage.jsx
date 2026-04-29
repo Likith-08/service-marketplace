@@ -1,10 +1,14 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { useEffect } from "react";
 import "./PaymentPage.css";
 
 export default function PaymentPage() {
   const navigate = useNavigate();
   const location = useLocation();
+  useEffect(() => {
+  window.scrollTo(0, 0);
+}, []);
 const bookingData = location.state || JSON.parse(localStorage.getItem("bookingData")) || {};
 const [paymentMethod, setPaymentMethod] = useState("cod");
 

@@ -1,10 +1,15 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import BASE_URL from "../../config";
+import { useEffect } from "react";
 import "./PaymentMethod.css";
 
 export default function CodPaymentPage() {
   const location = useLocation();
   const navigate = useNavigate();
+  
+useEffect(() => {
+  window.scrollTo(0, 0);
+}, []);
 
   const bookingData =
     location.state ||

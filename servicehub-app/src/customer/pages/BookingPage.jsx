@@ -62,7 +62,7 @@ console.log("Location State:", location.state);
           className="back-to-services-btn"
           onClick={() => navigate("/customer/services")}
         >
-          ← Back to Services
+          ← Back
         </button>
     <div className="booking-container">
 

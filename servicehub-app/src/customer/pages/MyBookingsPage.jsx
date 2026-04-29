@@ -33,6 +33,7 @@ const filteredBookings = bookings.filter((b) => {
   return true;
 });
   const navigate = useNavigate();
+  
 
   useEffect(() => {
   fetchBookings();

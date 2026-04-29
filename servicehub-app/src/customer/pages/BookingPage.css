@@ -308,7 +308,40 @@
   transform: translateY(-2px);
 }
 
+@media (max-width: 768px) {
 
+  .booking-page {
+    padding: 20px 14px 50px;
+    position: relative;
+  }
+
+  .back-to-services-btn {
+    position: fixed !important;
+
+    top: 6px;       /* 🔥 moved more up */
+    left: 8px;
+
+    z-index: 9999;
+
+    padding: 6px 10px;   /* 🔥 reduced size */
+    font-size: 12px;     /* 🔥 smaller text */
+    border-radius: 8px;
+
+    width: auto;         /* 🔥 prevent large width */
+    max-width: fit-content;
+
+    background: rgba(10,15,30,0.85);
+    border: 1px solid rgba(255,255,255,0.15);
+    backdrop-filter: blur(12px);
+
+    margin: 0;
+  }
+
+  .booking-container {
+    margin-top: 45px; /* 🔥 slightly reduced */
+  }
+
+}
 
 @media (max-width: 768px) {
   .summary-service-preview {
