@@ -21,12 +21,23 @@ export default function AuthPage() {
   }
 
   try {
-    const response = await fetch(`${BASE_URL}/api/auth/login`, {
+    let url = "";
+
+    if (isLogin) {
+      // 👉 LOGIN
+      url = `${BASE_URL}/api/auth/login`;
+    } else {
+      // 👉 SIGNUP
+      url = `${BASE_URL}/api/auth/signup`;
+    }
+
+    const response = await fetch(url, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
+        name: fullName,
         email: emailOrPhone,
         password: password,
       }),
@@ -35,6 +46,15 @@ export default function AuthPage() {
     const data = await response.json();
 
     if (response.ok) {
+      alert(data.message || "Success");
+
+      // after signup, switch to login
+      if (!isLogin) {
+        setIsLogin(true);
+        return;
+      }
+
+      // after login
       localStorage.setItem("token", data.token);
       localStorage.setItem("customerLoggedIn", "true");
 
