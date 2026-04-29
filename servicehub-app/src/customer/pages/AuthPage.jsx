@@ -1,6 +1,7 @@
 // AuthPage.jsx
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import BASE_URL from "../../config";
 import "./AuthPage.css";
 
 export default function AuthPage() {
@@ -11,12 +12,41 @@ export default function AuthPage() {
 
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = async (e) => {
+  e.preventDefault();
 
-    localStorage.setItem("customerLoggedIn", "true");
-    navigate("/customer/services");
-  };
+  if (!emailOrPhone || !password) {
+    alert("Please enter email and password");
+    return;
+  }
+
+  try {
+    const response = await fetch(`${BASE_URL}/api/auth/login`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email: emailOrPhone,
+        password: password,
+      }),
+    });
+
+    const data = await response.json();
+
+    if (response.ok) {
+      localStorage.setItem("token", data.token);
+      localStorage.setItem("customerLoggedIn", "true");
+
+      navigate("/customer/services");
+    } else {
+      alert(data.message);
+    }
+  } catch (error) {
+    console.error(error);
+    alert("Server error");
+  }
+};
 
   return (
     <div className="auth-page">
