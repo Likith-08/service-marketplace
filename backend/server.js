@@ -12,6 +12,7 @@ const bookingRoutes = require("./routes/bookingRoutes");
 
 const app = express();
 const server = http.createServer(app);
+require("dotenv").config();
 
 const io = new Server(server, {
   cors: {
