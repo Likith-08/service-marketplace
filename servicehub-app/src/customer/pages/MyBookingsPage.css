@@ -655,80 +655,125 @@
     max-width: 760px;
   }
 }
-@media (max-width: 768px) {
-  .back-to-services-btn {
-    position: fixed;
-    top: 10px;        /* 🔥 push to top */
-    left: 10px;       /* 🔥 stick to left */
 
-    padding: 6px 10px; /* 🔥 smaller size */
-    font-size: 12px;   /* 🔥 reduce text */
+ @media (max-width: 768px) {
 
-    border-radius: 8px;
-    z-index: 1000;
-
-    background: rgba(255,255,255,0.08);
-  }
-
-  .my-bookings-page {
-    padding-top: 60px;  /* 🔥 prevent overlap */
-  }
+  /* 🔥 FIX BUTTON OVERLAP PROPERLY */
+.my-bookings-page {
+  padding-top: 80px !important;   /* push everything down */
 }
 
-@media (max-width: 768px) {
-  .my-bookings-page {
-    padding: 28px 16px 70px;
+/* 🔥 extra safety for header */
+.bookings-header {
+  margin-top: 10px;
+}
+
+/* 🔥 keep button clean and above */
+.back-to-services-btn {
+  top: 8px;
+  left: 8px;
+  z-index: 9999;
+}
+
+  /* 🔥 tighter grid */
+  .bookings-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
   }
 
-  .bookings-header h1 {
-    font-size: 2.8rem;
+  /* 🔥 smaller card */
+  .booking-card {
+    padding: 10px;
+    border-radius: 16px;
   }
 
-  .bookings-header p {
-    font-size: 0.95rem;
-  }
-
+  /* 🔥 smaller image */
   .booking-image-wrapper {
-    height: 210px;
+    height: 130px;
   }
 
+  /* 🔥 title + spacing */
   .booking-top-row {
     flex-direction: column;
+    gap: 8px;
   }
 
+  .booking-top-row h2 {
+    font-size: 1rem;
+  }
+
+  /* 🔥 amount box compact */
   .amount-box {
     width: 100%;
-    text-align: left;
+    padding: 10px;
   }
 
+  .amount-box h3 {
+    font-size: 1rem;
+  }
+
+  /* 🔥 details compact */
   .booking-details-grid {
     grid-template-columns: 1fr;
+    gap: 8px;
   }
 
+  .detail-card {
+    padding: 10px;
+  }
+
+  .detail-card span {
+    font-size: 0.7rem;
+  }
+
+  .detail-card strong {
+    font-size: 0.85rem;
+  }
+
+  /* 🔥 progress compact */
   .booking-progress {
-    overflow-x: auto;
-    justify-content: flex-start;
-    padding: 20px 14px;
-    gap: 10px; 
+    padding: 12px;
+    gap: 8px;
   }
 
   .progress-step {
-  flex: 1;              /* 🔥 THIS FIXES WIDTH */
-  min-width: 0;         /* 🔥 PREVENT OVERFLOW */
-}
+    min-width: 60px;
+  }
+
+  .step {
+    width: 38px;
+    height: 38px;
+    font-size: 0.8rem;
+  }
 
   .line {
-  flex: 1;              /* 🔥 MAKE LINE FLEXIBLE */
-  min-width: 20px;      /* small line */
-}
+    min-width: 18px;
+    height: 3px;
+  }
+
+  /* 🔥 buttons compact */
   .booking-actions {
     flex-direction: column;
-    align-items: stretch;
+    gap: 8px;
   }
 
   .view-btn,
-  .delete-btn,
-  .empty-bookings-card button {
+  .delete-btn {
     width: 100%;
+    height: 36px;
+    font-size: 12px;
+    border-radius: 10px;
   }
+
+  /* 🔥 filters compact */
+  .filters {
+    gap: 8px;
+    padding-bottom: 8px;
+  }
+
+  .filters button {
+    font-size: 11px;
+    padding: 6px 10px;
+  }
+
 }

@@ -322,7 +322,7 @@ select:focus {
 }
 
 .back-to-payment-btn {
-  position: absolute;
+  position: fixed;
   top: 24px;
   left: 24px;
   z-index: 10;
@@ -394,26 +394,20 @@ select:focus {
     0 18px 40px rgba(37,99,235,0.22);
 }
 
+
 @media (max-width: 768px) {
   .back-to-payment-btn {
-    top: 35px;
-    left: 26px;
-
-    padding: 6px 10px;   /* 🔥 smaller */
-    font-size: 13px;
-
-    border-radius: 8px;
-  }
-
-  /* prevent overlap */
-  .your-page-container {   /* 🔥 replace with your actual parent class */
-    padding-top: 80px;
+    top: 14px;
+    left: 12px;
+    padding: 12px 14px;
+    font-size: 12px;
+    border-radius: 12px;
   }
 }
 
 @media (max-width: 768px) {
   .method-page {
-    padding: 16px;
+   padding-top: 80px !important;
   }
 
   .method-wrapper {

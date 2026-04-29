@@ -324,7 +324,7 @@
     z-index: 9999;
 
     padding: 6px 10px;   /* 🔥 reduced size */
-    font-size: 12px;     /* 🔥 smaller text */
+    font-size: 10px;     /* 🔥 smaller text */
     border-radius: 8px;
 
     width: auto;         /* 🔥 prevent large width */
@@ -334,11 +334,11 @@
     border: 1px solid rgba(255,255,255,0.15);
     backdrop-filter: blur(12px);
 
-    margin: 0;
+    margin: 2;
   }
 
   .booking-container {
-    margin-top: 45px; /* 🔥 slightly reduced */
+    margin-top: 90px; /* 🔥 slightly reduced */
   }
 
 }

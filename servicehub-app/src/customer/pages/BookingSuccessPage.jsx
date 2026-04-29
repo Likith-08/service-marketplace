@@ -16,7 +16,7 @@ export default function BookingSuccessPage() {
         className="back-to-services-btn"
         onClick={() => navigate("/customer/services")}
       >
-        ← Back to Services
+        ← Back 
       </button>
 
       <div className="success-card">

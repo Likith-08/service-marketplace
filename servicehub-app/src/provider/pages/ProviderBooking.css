@@ -421,49 +421,159 @@
   transform: translateY(-3px);
 }
 
+/* 📱 CLEAN MOBILE FIX */
 @media (max-width: 768px) {
+
+  /* 🔥 PAGE */
   .provider-bookings-page {
-    padding: 90px 16px 70px;
+  padding: 45px 14px 45px;
+}
+
+  /* 🔥 BACK BUTTON FIX */
+  .back-to-services-btn {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    padding: 6px 10px;
+    font-size: 11px;
+    border-radius: 8px;
+    z-index: 9999;
   }
 
+  @media (max-width: 768px) {
+
+  /* 🔥 HEADER FIX */
   .provider-header {
-    flex-direction: column;
+    flex-direction: column;   /* 🔥 stack properly */
     align-items: flex-start;
-    margin-top: 50px;
+    gap: 16px;
   }
 
-  .provider-header h1 {
-    font-size: 2.8rem;
-  }
-
+  /* 🔥 STATS BELOW HEADER (NOT SIDE) */
   .provider-stats-mini {
     width: 100%;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;   /* 🔥 smooth scroll */
   }
 
+  .mini-card {
+    min-width: 90px;
+    padding: 12px;
+    border-radius: 14px;
+  }
+
+  .mini-card span {
+    font-size: 1.3rem;
+  }
+
+  /* 🔥 HEADER TEXT FIX */
+  .provider-header h1 {
+    font-size: 2rem;
+  }
+
+  .provider-header p {
+    font-size: 0.9rem;
+  }
+
+}
+
+  /* 🔥 STATS */
+  .provider-stats-mini {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .mini-card {
+    padding: 14px;
+    border-radius: 14px;
+  }
+
+  .mini-card span {
+    font-size: 1.4rem;
+  }
+
+  /* 🔥 GRID */
   .provider-bookings-grid {
     grid-template-columns: 1fr;
+    gap: 16px;
   }
 
+  /* 🔥 CARD (VERY IMPORTANT FIX) */
+  .provider-booking-card {
+    min-height: auto;   /* ❌ remove 880px */
+    border-radius: 20px;
+  }
+
+  .provider-booking-content {
+    padding: 16px;
+  }
+
+  /* 🔥 IMAGE */
+  .provider-booking-image-wrapper {
+    height: 150px;
+  }
+
+  /* 🔥 TITLE + PRICE */
   .provider-booking-top {
     flex-direction: column;
+    gap: 10px;
+  }
+
+  .provider-booking-top h2 {
+    font-size: 1.2rem;
   }
 
   .provider-amount-box {
     width: 100%;
     text-align: left;
+    padding: 10px;
   }
 
+  .provider-amount-box h3 {
+    font-size: 1.3rem;
+  }
+
+  /* 🔥 DETAILS */
   .provider-details-grid {
     grid-template-columns: 1fr;
+    gap: 10px;
   }
 
+  .provider-detail-card {
+    padding: 12px;
+  }
+
+  /* 🔥 PROGRESS BAR */
+  .provider-progress {
+    margin: 16px 0 24px;   /* 🔥 balanced spacing */
+    padding-bottom: 6px;
+  }
+
+  .progress-step {
+    min-width: 70px;
+  }
+
+  .progress-circle {
+    width: 36px;
+    height: 36px;
+    font-size: 12px;
+  }
+
+  .progress-line {
+    width: 30px;
+  }
+
+  /* 🔥 BUTTONS */
   .provider-booking-actions {
     flex-direction: column;
+    gap: 8px;
   }
 
   .provider-booking-actions button {
     width: 100%;
+    font-size: 12px;
+    padding: 10px;
   }
+
 }

@@ -632,6 +632,156 @@ body {
   position: relative;
   overflow-x: hidden;
 }
+
+@media (max-width: 768px) {
+
+  /* 🔥 CLEAN PAGE SPACING */
+  .dashboard {
+    padding: 60px 12px 40px;
+  }
+
+  /* 🔥 FIX TOP BUTTON */
+  .provider-dashboard-btn {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 9999;
+
+    padding: 6px 10px;
+    font-size: 11px;
+    border-radius: 8px;
+    width: auto;
+    height: auto;
+  }
+
+  /* 🔥 STATS (horizontal scroll like real apps) */
+  .dashboard-stats {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding-bottom: 8px;
+    margin-top: 70px;
+  }
+
+  .stat-card {
+    min-width: 95px;
+    padding: 10px;
+  }
+
+  .stat-card p {
+    font-size: 16px;
+  }
+
+  /* 🔥 HEADER FIX */
+  .topbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    margin-top: 10px;
+  }
+
+  .topbar h2 {
+    font-size: 17px;
+  }
+
+  .logout-btn {
+    width: auto;            /* ❌ remove full width */
+    padding: 6px 12px;      /* 🔥 compact */
+    font-size: 11px;
+    border-radius: 6px;
+
+    align-self: flex-end;   /* 🔥 move to right */
+  }
+
+  /* 🔥 FORM */
+  .create-card {
+    padding: 14px;
+    border-radius: 12px;
+  }
+
+  .form-group input,
+  .form-group select {
+    font-size: 13px;
+    padding: 10px;
+  }
+
+  /* 🔥 PRICE ROW FIX */
+  .price-row {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  /* 🔥 FILTER */
+  .filter-box {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .filter-box select,
+  .filter-box input,
+  .filter-box button {
+    width: 100%;
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  /* 🔥 SERVICES GRID */
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  /* 🔥 CARD */
+  .service-card {
+    padding: 12px;
+  }
+
+  .service-img {
+    height: 110px;
+  }
+
+  .desc {
+    font-size: 12px;
+  }
+
+  .price {
+    font-size: 15px;
+  }
+
+  /* 🔥 PROVIDER */
+  .provider-preview {
+    gap: 6px;
+    padding: 8px;
+  }
+
+  .provider-preview-img {
+    width: 34px;
+    height: 34px;
+  }
+
+  .provider-preview-info h5 {
+    font-size: 11px;
+  }
+
+  /* 🔥 BUTTONS */
+  .view-btn {
+    height: 34px;
+    font-size: 12px;
+  }
+
+  .card-actions {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .card-actions button {
+    width: 100%;
+    font-size: 11px;
+    padding: 6px;
+  }
+
+}
+
 @media (max-width: 768px) {
   .provider-dashboard-btn {
     top: 16px;     /* 🔥 slightly down */
@@ -651,28 +801,7 @@ body {
   }
 }
 
-@media (max-width: 768px) {
-  .provider-dashboard-btn {
-    top: 16px;
-    right: 16px;
-    min-width: 160px;
-    padding: 12px 18px;
-    font-size: 14px;
-  }
-}
-/* 📱 MOBILE RESPONSIVE */
-@media (max-width: 768px) {
-  .filter-box {
-    flex-direction: column;
-    align-items: stretch;
-  }
 
-  .filter-box select,
-  .filter-box input,
-  .filter-box button {
-    width: 100%;
-  }
-}
 
 @media (max-width: 768px) {
   .form-group select {

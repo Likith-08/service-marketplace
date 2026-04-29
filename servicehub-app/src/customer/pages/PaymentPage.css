@@ -283,7 +283,32 @@
   font-size: 2.6rem;
 }
 
+@media (max-width: 768px) {
 
+  /* 🔥 Disable overlay blocking touches */
+  .payment-page::before,
+  .payment-page::after {
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* 🔥 Bring content above everything */
+  .payment-wrapper {
+    position: relative;
+    z-index: 5;
+  }
+
+  .payment-methods {
+    position: relative;
+    z-index: 6;
+  }
+
+  .payment-card {
+    position: relative;
+    z-index: 7;
+  }
+
+}
 
 /* ===================== RESPONSIVE ===================== */
 @media (max-width: 900px) {

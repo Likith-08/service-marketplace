@@ -171,16 +171,28 @@
 }
 
 /* RESPONSIVE */
-@media (max-width: 768px) {
-  .details-grid {
-    grid-template-columns: 1fr;
+  @media (max-width: 768px) {
+
+  /* 🔥 Move button out of layout */
+  .back-btn {
+    position: fixed;   /* IMPORTANT */
+    top: 10px;
+    left: 10px;
+    z-index: 9999;
+
+    padding: 6px 10px;
+    font-size: 12px;
+    border-radius: 8px;
   }
 
-  .details-card {
-    padding: 20px;
+  /* 🔥 Push content down (main fix) */
+  .details-page {
+    padding-top: 80px;   /* prevents overlap */
   }
 
-  .details-header h1 {
-    font-size: 28px;
+  /* 🔥 Optional spacing */
+  .details-header {
+    margin-top: 10px;
   }
+
 }
