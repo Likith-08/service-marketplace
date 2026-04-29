@@ -55,7 +55,7 @@ export default function ForgotPassword() {
         Send Reset Link
       </button>
 
-      <div className="back-login" onClick={() => navigate("/")}>
+      <div className="back-login" onClick={() => navigate("/customer")}>
         Back to Login
       </div>
     </div>
