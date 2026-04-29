@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import BASE_URL from "../../config";
 import socket from "../socket";
 import "./MyBookingsPage.css";
 import toast from "react-hot-toast";
@@ -60,7 +61,7 @@ const filteredBookings = bookings.filter((b) => {
 
   const fetchBookings = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/bookings");
+      const res = await fetch(`${BASE_URL}/api/bookings`);
       const data = await res.json();
 
       if (Array.isArray(data)) {
@@ -77,7 +78,7 @@ const filteredBookings = bookings.filter((b) => {
   console.log("Deleting:", id);
 
   try {
-    const res = await fetch(`http://localhost:5000/api/bookings/${id}`, {
+    const res = await fetch(`${BASE_URL}/api/bookings/${id}`, {
       method: "DELETE",
     });
 

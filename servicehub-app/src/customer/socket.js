@@ -1,6 +1,6 @@
 import { io } from "socket.io-client";
-
-const socket = io("http://localhost:5000");
+import BASE_URL from "../config";
+const socket = io(BASE_URL);
 
 socket.on("connect", () => {
   console.log("✅ Connected:", socket.id);

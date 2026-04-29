@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import BASE_URL from "../../config";
 import "./ProviderBooking.css";
 
 export default function ProviderBookings() {
@@ -12,7 +13,7 @@ export default function ProviderBookings() {
 
   const fetchBookings = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/bookings");
+      const res = await fetch(`${BASE_URL}/api/bookings`);
       const data = await res.json();
 
       const bookingList = Array.isArray(data)
@@ -28,7 +29,7 @@ export default function ProviderBookings() {
   const updateStatus = async (id, status) => {
     try {
       const res = await fetch(
-        `http://localhost:5000/api/bookings/${id}/status`,
+        `${BASE_URL}/api/bookings/${id}/status`,
         {
           method: "PUT",
           headers: {
@@ -56,7 +57,7 @@ export default function ProviderBookings() {
 
   const deleteBooking = async (id) => {
   try {
-    const res = await fetch(`http://localhost:5000/api/bookings/${id}`, {
+    const res = await fetch(`${BASE_URL}/api/bookings/${id}`, {
       method: "DELETE",
     });
 

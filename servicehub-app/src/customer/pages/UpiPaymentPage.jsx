@@ -1,4 +1,5 @@
 import { useLocation, useNavigate } from "react-router-dom";
+import BASE_URL from "../../config";
 import "./PaymentMethod.css";
 
 export default function UpiPaymentPage() {
@@ -25,7 +26,7 @@ export default function UpiPaymentPage() {
     const service = bookingData.service || {};
     const booking = bookingData.booking || {};
 
-    const res = await fetch("http://localhost:5000/api/bookings/create", {
+    const res = await fetch(`${BASE_URL}/api/bookings/create`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -79,7 +80,7 @@ export default function UpiPaymentPage() {
      if (data.success) {
 
     // 👉 STEP 1: Create Razorpay Order
-    const orderRes = await fetch("http://localhost:5000/create-order", {
+    const orderRes = await fetch(`${BASE_URL}/create-order`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

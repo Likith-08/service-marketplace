@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useState } from "react";
+import BASE_URL from "../../config";
 import "./ServicesPage.css";
 import { useNavigate } from "react-router-dom";
 
@@ -51,7 +52,7 @@ export default function ServicesPage() {
 
 
  useEffect(() => {
-  fetch("http://localhost:5000/api/services/public")
+  fetch(`${BASE_URL}/api/services/public`)
     .then((res) => res.json())
     .then((data) => {
       console.log("SERVICES DATA:", data); // debug

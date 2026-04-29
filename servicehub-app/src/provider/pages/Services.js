@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import BASE_URL from "../../config";
 import NotificationBell from "../components/NotificationBell";
 import "./Services.css";
 
@@ -65,7 +66,7 @@ function Services() {
   try {
     const token = localStorage.getItem("token");
 
-    let url = "http://localhost:5000/api/services";
+    let url = `${BASE_URL}/api/services`;
 
     let params = [];
 
@@ -100,7 +101,7 @@ function Services() {
  useEffect(() => {
   const token = localStorage.getItem("token");
 
-  let url = "http://localhost:5000/api/services";
+  let url = `${BASE_URL}/api/services`;
   let params = [];
 
   if (filterCategory !== "") {
@@ -165,7 +166,7 @@ function Services() {
         providerPhone,
         providerLocation,
       });
-      await fetch("http://localhost:5000/api/services/create", {
+      await fetch(`${BASE_URL}/api/services/create`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -229,7 +230,7 @@ const handleEdit = (service) => {
     try {
       const token = localStorage.getItem("token");
 
-      await fetch(`http://localhost:5000/api/services/${editId}`, {
+      await fetch(`${BASE_URL}/api/services/${editId}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -272,7 +273,7 @@ const handleEdit = (service) => {
     try {
       const token = localStorage.getItem("token");
 
-      await fetch(`http://localhost:5000/api/services/${id}/toggle`, {
+      await fetch(`${BASE_URL}/api/services/${id}/toggle`, {
         method: "PUT",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -295,7 +296,7 @@ const clearFilters = () => {
 const confirmDelete = async () => {
   const token = localStorage.getItem("token");
 
-  await fetch(`http://localhost:5000/api/services/${selectedServiceId}`, {
+  await fetch(`${BASE_URL}/api/services/${selectedServiceId}`, {
     method: "DELETE",
     headers: {
       Authorization: `Bearer ${token}`

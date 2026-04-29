@@ -1,4 +1,5 @@
 import { useLocation, useNavigate } from "react-router-dom";
+import BASE_URL from "../../config";
 import "./PaymentMethod.css";
 
 export default function CardPaymentPage() {
@@ -27,7 +28,7 @@ export default function CardPaymentPage() {
     const service = bookingData.service || {};
     const booking = bookingData.booking || {};
 
-    const res = await fetch("http://localhost:5000/api/bookings/create", {
+    const res = await fetch(`${BASE_URL}/api/bookings/create`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -81,7 +82,7 @@ bookingStatus: "confirmed"
 if (data.success) {
 
   // 👉 STEP 1: Create Razorpay Order
-  const orderRes = await fetch("http://localhost:5000/create-order", {
+  const orderRes = await fetch(`${BASE_URL}/create-order`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -106,7 +107,7 @@ if (data.success) {
   console.log("Payment Success:", response);
 
   // ✅ CALL BACKEND TO SAVE BOOKING + PAYMENT
-  const res = await fetch("http://localhost:5000/api/bookings/create", {
+  const res = await fetch(`${BASE_URL}/api/bookings/create`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
