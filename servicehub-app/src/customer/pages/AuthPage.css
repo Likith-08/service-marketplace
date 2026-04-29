@@ -248,6 +248,92 @@ body {
   box-shadow: 0 10px 25px rgba(37,99,235,0.5);
 }
 
+/* ===================== MOBILE FIX ===================== */
+@media (max-width: 600px) {
+
+  .auth-page {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* LEFT SECTION */
+  .auth-left {
+    min-height: auto;
+    padding: 30px 16px;
+    text-align: center;
+  }
+
+  .left-content {
+    max-width: 100%;
+  }
+
+  .left-content h1 {
+    font-size: 28px;
+    line-height: 1.2;
+  }
+
+  .left-content p {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  .feature-list {
+    align-items: center;
+    gap: 10px;
+  }
+
+  .feature-item {
+    padding: 10px 14px;
+    font-size: 13px;
+  }
+
+  /* RIGHT SECTION */
+  .auth-right {
+    padding: 12px;
+  }
+
+  .auth-card {
+    padding: 20px 14px;
+    border-radius: 20px;
+  }
+
+  /* TEXT */
+  .auth-card h2 {
+    font-size: 22px;
+  }
+
+  .sub-text {
+    font-size: 13px;
+    margin-bottom: 20px;
+  }
+
+  /* INPUT */
+  .input-group input {
+    height: 48px;
+    font-size: 14px;
+  }
+
+  /* EXTRA ROW */
+  .extra-row {
+    font-size: 12px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  /* BUTTON */
+  .submit-btn {
+    height: 48px;
+    font-size: 14px;
+  }
+
+  /* TABS */
+  .tabs button {
+    padding: 10px;
+    font-size: 13px;
+  }
+}
+
 /* ===================== RESPONSIVE ===================== */
 @media (max-width: 950px) {
   .auth-page {

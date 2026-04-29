@@ -159,7 +159,9 @@ export default function AuthPage() {
                   <input type="checkbox" /> Remember me
                 </label>
 
-                <span>Forgot Password?</span>
+              <span onClick={() => navigate("/forgot-password")}>
+                Forgot Password
+              </span>
               </div>
             )}
 

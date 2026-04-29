@@ -3,6 +3,7 @@ import SplashScreen from "./pages/Splash";
 import LandingPage from "./pages/Landing";
 //CUSTOMER
 import AuthPage from "./customer/pages/AuthPage";
+import ForgotPassword from "./customer/pages/ForgotPassword";
 import ServicesPage from "./customer/pages/ServicesPage";
 import BookingPage from "./customer/pages/BookingPage";
 import PaymentPage from "./customer/pages/PaymentPage";
@@ -30,6 +31,7 @@ function App() {
         <Route path="/home" element={<LandingPage />} />
         {/* CUSTOMER ROUTES */}
         <Route path="/customer" element={<AuthPage />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/customer/services" element={<ServicesPage />} />
         <Route path="/customer/booking" element={<BookingPage />} />
         <Route path="/customer/payment" element={<PaymentPage />} />
