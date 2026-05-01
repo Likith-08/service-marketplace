@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from "react";
 import socket from "../utils/socket";
+import BASE_URL from "../../config";
 
 export default function NotificationBell() {
   const [notifications, setNotifications] = useState([]);
 
  useEffect(() => {
+  fetch(BASE_URL).catch(() => {});   // 🔥 wake Render server
+  socket.connect();         
+          // 🔥 force socket connect
   socket.on("newBooking", (data) => {
     setNotifications((prev) => [data, ...prev]);
   });
