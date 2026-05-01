@@ -46,7 +46,7 @@ export default function AuthPage() {
     const data = await response.json();
 
     if (response.ok) {
-      alert(data.message || "Success");
+      
 
       // after signup, switch to login
       if (!isLogin) {

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import BASE_URL from "../../config";
+import socket from "../utils/socket";
 import "./ProviderBooking.css";
 
 export default function ProviderBookings() {
@@ -10,6 +11,22 @@ export default function ProviderBookings() {
   useEffect(() => {
     fetchBookings();
   }, []);
+  
+  useEffect(() => {
+  socket.on("bookingUpdated", (data) => {
+    setBookings((prev) =>
+      prev.map((b) =>
+        b._id === data.bookingId
+          ? { ...b, bookingStatus: data.status }
+          : b
+      )
+    );
+  });
+
+  return () => {
+    socket.off("bookingUpdated");
+  };
+}, []);
 
   const fetchBookings = async () => {
     try {

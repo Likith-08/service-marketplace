@@ -11,11 +11,7 @@ export default function NotificationBell() {
 
  socket.on("bookingUpdated", (data) => {
   setNotifications((prev) =>
-    prev.filter(
-      (item) =>
-        item._id !== data.bookingId &&
-        item.bookingId !== data.bookingId
-    )
+    prev.filter((item) => item._id !== data.bookingId)
   );
 });
 

@@ -570,21 +570,7 @@ body {
 .logout-btn:hover {
   transform: translateY(-2px);
 }
-@media (max-width: 768px) {
-  .my-bookings-btn,
-  .logout-btn {
-    width: 100%;
-    padding: 10px 14px;
-    font-size: 13px;
-    border-radius: 10px;
-  }
-
-  .my-bookings-btn:hover,
-  .logout-btn:hover {
-    transform: none;
-  }
-}
-
+ 
 @media (max-width: 480px) {
   .my-bookings-btn,
   .logout-btn {
@@ -592,6 +578,7 @@ body {
     padding: 9px 12px;
   }
 }
+
 @media (max-width: 768px) {
 
  .modal-overlay {
