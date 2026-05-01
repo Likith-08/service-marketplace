@@ -130,7 +130,7 @@
   }
 
   .btn-group {
-    flex-direction: column;
+    flex-direction: row;
     gap: 14px;
     width: 100%;
     align-items: center;
