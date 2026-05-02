@@ -32,7 +32,7 @@ function LandingPage() {
           className="btn provider"
           onClick={() => navigate("/provider")}
         >
-          Provider
+         Service Provider
         </button>
       </div>
     </div>
