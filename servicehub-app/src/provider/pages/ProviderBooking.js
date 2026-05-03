@@ -59,13 +59,7 @@ export default function ProviderBookings() {
       const data = await res.json();
 
       if (data.success) {
-        setBookings((prev) =>
-          prev.map((booking) =>
-            booking._id === id
-              ? { ...booking, bookingStatus: status, status:status, }
-              : booking
-          )
-        );
+
       }
     } catch (err) {
       console.log("Failed to update status", err);

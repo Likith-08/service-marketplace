@@ -1,6 +1,9 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import SplashScreen from "./pages/Splash";
 import LandingPage from "./pages/Landing";
+import { Toaster } from "react-hot-toast";
+import { useLocation } from "react-router-dom";
+import NotificationBell from "./provider/components/NotificationBell";
 //CUSTOMER
 import AuthPage from "./customer/pages/AuthPage";
 import ForgotPassword from "./customer/pages/ForgotPassword";
@@ -26,9 +29,29 @@ import ProviderBooking from "./provider/pages/ProviderBooking";
 function App() {
   return (
     <Router>
+      <AppContent />
+    </Router>
+  );
+}
+
+function AppContent() {
+  const location = useLocation();
+
+  const showBell =
+    location.pathname === "/provider/services" ||
+    location.pathname === "/provider/bookings";
+
+  return (
+    <>
+      {/* ✅ ADD THIS LINE (VERY IMPORTANT) */}
+      <Toaster position="top-right" />
+
+      {showBell && <NotificationBell />}
+
       <Routes>
         <Route path="/" element={<SplashScreen />} />
         <Route path="/home" element={<LandingPage />} />
+
         {/* CUSTOMER ROUTES */}
         <Route path="/customer" element={<AuthPage />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
@@ -44,14 +67,14 @@ function App() {
         <Route path="/customer/my-bookings" element={<MyBookingsPage />} />
         <Route path="/customer/booking-details" element={<BookingDetails />} />
 
-         {/* PROVIDER ROUTES */}
+        {/* PROVIDER ROUTES */}
         <Route path="/provider" element={<LoginPage />} />
         <Route path="/provider/register" element={<RegisterPage />} />
         <Route path="/provider/services" element={<ProviderServices />} />
         <Route path="/provider/bookings" element={<ProviderBooking />} />
       </Routes>
-    </Router>
+    </>
   );
 }
 
- export default App;
+export default App;

@@ -37,20 +37,32 @@ const filteredBookings = bookings.filter((b) => {
 
   useEffect(() => {
   fetchBookings();
+const handleUpdate = (data) => {
+  console.log("🔥 RECEIVED:", data);
 
-  const handleUpdate = (data) => {
-    console.log("🔥 RECEIVED:", data);
+  // ✅ update only that booking in UI
+  setBookings((prev) =>
+    prev.map((b) =>
+      b._id === data.bookingId
+        ? { ...b, bookingStatus: data.status }
+        : b
+    )
+  );
 
-    fetchBookings();
+  // ✅ popup
+  if (data?.status === "accepted") {
+    toast.success("Booking Accepted", {
+      duration: 5000, // ⏱️ 5 seconds
+    });
 
-    if (data?.status === "accepted") {
-      toast.success("Booking Accepted");
-    } else if (data?.status === "rejected") {
-      toast.error("Booking Rejected");
-    } else if (data?.status === "completed") {
-      toast.success("Service Completed");
-    }
-  };
+  } else if (data?.status === "rejected") {
+    toast.error("Booking Rejected");
+  } else if (data?.status === "completed") {
+    toast.success("Service Completed", {
+      duration: 5000,
+    });
+  }
+};
 
   socket.on("bookingUpdated", handleUpdate);
 
